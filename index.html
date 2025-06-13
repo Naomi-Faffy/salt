@@ -3,396 +3,611 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SALT | Fine Dining Experience | Harare, Zimbabwe</title>
+  <title>LUMIÈRE | Fine Dining Experience</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <div class="loader">
+    <div class="loader-content">
+      <div class="loader-logo">LUMIÈRE</div>
+      <div class="loader-progress"><span></span></div>
+    </div>
+  </div>
+
   <header class="header">
     <div class="container">
-      <nav class="nav">
+      <div class="header-inner">
         <div class="logo">
-          <a href="#home">SALT</a>
+          <a href="#home">LUMIÈRE</a>
         </div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="reservation-button">
-          <a href="#reserve" class="btn btn-outline">Reserve a Table</a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#menu" class="nav-link">Menu</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <a href="#reserve" class="btn-reserve">Reservations</a>
+          <div class="menu-toggle">
+            <span></span>
+            <span></span>
+          </div>
         </div>
-        <div class="mobile-menu-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+      </div>
     </div>
   </header>
 
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Refined Culinary Experience</h1>
-      <p>Harare's Premier Fine Dining Destination</p>
-      <a href="#reserve" class="btn btn-primary">Make a Reservation</a>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="container">
-      <div class="section-grid">
-        <div class="about-image">
-          <img src="/placeholder.svg?height=600&width=800" alt="Salt Restaurant Interior">
+  <div class="mobile-menu">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#menu" class="mobile-nav-link">Menu</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-footer">
+        <a href="#reserve" class="btn-mobile-reserve">Make a Reservation</a>
+        <div class="mobile-contact">
+          <p>123 Elegance Avenue</p>
+          <p>+1 (555) 123-4567</p>
         </div>
-        <div class="about-content">
-          <span class="subtitle">Our Story</span>
-          <h2>A Culinary Journey</h2>
-          <p>Nestled in the heart of Harare, SALT offers an unparalleled dining experience that celebrates the rich flavors of Zimbabwe with contemporary culinary techniques.</p>
-          <p>Established in 2018, our restaurant has quickly become the city's most sought-after destination for those seeking exceptional cuisine in an elegant setting.</p>
-          <p>Each dish tells a story of our heritage, reimagined through the creative vision of our award-winning chefs.</p>
-          <div class="signature">
-            <img src="/placeholder.svg?height=80&width=200" alt="Chef's Signature">
-            <span>Executive Chef</span>
-          </div>
+        <div class="mobile-social">
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Facebook</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="philosophy">
-    <div class="container">
-      <div class="philosophy-content">
-        <span class="subtitle">Our Philosophy</span>
-        <h2>Locally Sourced, Globally Inspired</h2>
-        <p>At SALT, we believe in honoring the essence of each ingredient. Our menu changes seasonally to showcase the finest local produce at its peak, transformed through innovative techniques and presented with artistic precision.</p>
-        <div class="values">
-          <div class="value">
-            <h3>Sustainability</h3>
-            <p>We partner with local farmers who share our commitment to sustainable practices.</p>
-          </div>
-          <div class="value">
-            <h3>Craftsmanship</h3>
-            <p>Every element on your plate is crafted with meticulous attention to detail.</p>
-          </div>
-          <div class="value">
-            <h3>Experience</h3>
-            <p>We create memorable moments through exceptional service and ambiance.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="menu" class="menu">
-    <div class="container">
-      <div class="section-header">
-        <span class="subtitle">Culinary Excellence</span>
-        <h2>Menu Highlights</h2>
-        <p>A selection of our signature dishes, crafted with precision and passion</p>
-      </div>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-image">
-            <img src="/placeholder.svg?height=400&width=400" alt="Signature Dish">
-          </div>
-          <div class="menu-details">
-            <h3>Flame-Grilled Ribeye</h3>
-            <p>Aged 28 days, served with truffle mash, seasonal vegetables, and red wine jus</p>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="menu-image">
-            <img src="/placeholder.svg?height=400&width=400" alt="Seafood Dish">
-          </div>
-          <div class="menu-details">
-            <h3>Pan-Seared Salmon</h3>
-            <p>With saffron risotto, asparagus, and lemon beurre blanc</p>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="menu-image">
-            <img src="/placeholder.svg?height=400&width=400" alt="Vegetarian Dish">
-          </div>
-          <div class="menu-details">
-            <h3>Wild Mushroom Tart</h3>
-            <p>Seasonal wild mushrooms, caramelized onions, and aged goat cheese in a flaky pastry</p>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="menu-image">
-            <img src="/placeholder.svg?height=400&width=400" alt="Dessert">
-          </div>
-          <div class="menu-details">
-            <h3>Chocolate Fondant</h3>
-            <p>Warm chocolate cake with a molten center, served with vanilla bean ice cream</p>
-          </div>
-        </div>
-      </div>
-      <div class="menu-cta">
-        <a href="#" class="btn btn-secondary">View Full Menu</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="experience">
-    <div class="container">
-      <div class="section-grid">
-        <div class="experience-content">
-          <span class="subtitle">The Experience</span>
-          <h2>Elegant Ambiance</h2>
-          <p>Step into a world of refined elegance where every detail has been carefully considered. Our dining room combines contemporary design with subtle nods to Zimbabwe's rich cultural heritage.</p>
-          <p>Soft lighting, sophisticated décor, and comfortable seating create the perfect backdrop for an unforgettable dining experience.</p>
-          <p>For special occasions, our private dining room offers an intimate setting for up to 12 guests.</p>
-          <a href="#reserve" class="btn btn-primary">Reserve Your Experience</a>
-        </div>
-        <div class="experience-image">
-          <img src="/placeholder.svg?height=600&width=800" alt="Salt Restaurant Ambiance">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="chef" class="chef">
-    <div class="container">
-      <div class="section-grid">
-        <div class="chef-image">
-          <img src="/placeholder.svg?height=600&width=800" alt="Executive Chef">
-        </div>
-        <div class="chef-content">
-          <span class="subtitle">Culinary Artistry</span>
-          <h2>Meet Our Chef</h2>
-          <p>With over 15 years of experience in renowned restaurants across Europe and Africa, our Executive Chef brings a wealth of knowledge and passion to SALT.</p>
-          <p>Trained in classical techniques and inspired by global flavors, the chef's innovative approach to cuisine has earned numerous accolades and a devoted following.</p>
-          <p>Each dish reflects a commitment to excellence and a deep respect for ingredients, resulting in a dining experience that delights all the senses.</p>
-          <div class="chef-quote">
-            <blockquote>"My cooking is a celebration of Zimbabwe's incredible ingredients, transformed through technique but always honoring their true essence."</blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery" class="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="subtitle">Visual Journey</span>
-        <h2>Gallery</h2>
-        <p>Glimpses of our culinary creations and elegant space</p>
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="/placeholder.svg?height=400&width=400" alt="Restaurant Interior">
-        </div>
-        <div class="gallery-item">
-          <img src="/placeholder.svg?height=400&width=400" alt="Signature Cocktail">
-        </div>
-        <div class="gallery-item">
-          <img src="/placeholder.svg?height=400&width=400" alt="Plated Dish">
-        </div>
-        <div class="gallery-item">
-          <img src="/placeholder.svg?height=400&width=400" alt="Private Dining Room">
-        </div>
-        <div class="gallery-item">
-          <img src="/placeholder.svg?height=400&width=400" alt="Chef Plating">
-        </div>
-        <div class="gallery-item">
-          <img src="/placeholder.svg?height=400&width=400" alt="Bar Area">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonials" class="testimonials">
-    <div class="container">
-      <div class="testimonials-content">
-        <span class="subtitle">Guest Experiences</span>
-        <h2>What Our Guests Say</h2>
-        <div class="testimonial-slider">
-          <div class="testimonial">
-            <p>"An extraordinary dining experience that rivals the best restaurants I've visited globally. The attention to detail in both food and service is impeccable."</p>
-            <div class="testimonial-author">
-              <span>James M.</span>
-              <div class="stars">★★★★★</div>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="hero-slide" style="background-image: url('/placeholder.svg?height=1080&width=1920');">
+              <div class="hero-content">
+                <h1 class="hero-title">Culinary<br>Excellence</h1>
+                <p class="hero-subtitle">A symphony of flavors</p>
+              </div>
             </div>
           </div>
-          <div class="testimonial">
-            <p>"SALT has redefined fine dining in Harare. The tasting menu was a journey of flavors that surprised and delighted with each course."</p>
-            <div class="testimonial-author">
-              <span>Tendai R.</span>
-              <div class="stars">★★★★★</div>
+          <div class="swiper-slide">
+            <div class="hero-slide" style="background-image: url('/placeholder.svg?height=1080&width=1920');">
+              <div class="hero-content">
+                <h1 class="hero-title">Artful<br>Presentation</h1>
+                <p class="hero-subtitle">Where gastronomy meets art</p>
+              </div>
             </div>
           </div>
-          <div class="testimonial">
-            <p>"From the moment we arrived, we were treated to exceptional service. The sommelier's wine pairings elevated an already outstanding meal to something truly memorable."</p>
-            <div class="testimonial-author">
-              <span>Sarah K.</span>
-              <div class="stars">★★★★★</div>
+          <div class="swiper-slide">
+            <div class="hero-slide" style="background-image: url('/placeholder.svg?height=1080&width=1920');">
+              <div class="hero-content">
+                <h1 class="hero-title">Refined<br>Atmosphere</h1>
+                <p class="hero-subtitle">An unforgettable dining experience</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="testimonial-dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+        <div class="hero-pagination swiper-pagination"></div>
       </div>
-    </div>
-  </section>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
 
-  <section id="reserve" class="reservation">
-    <div class="container">
-      <div class="reservation-content">
-        <span class="subtitle">Secure Your Table</span>
-        <h2>Make a Reservation</h2>
-        <p>For an unforgettable dining experience at SALT, we recommend making a reservation in advance.</p>
-        <form id="reservationForm" class="reservation-form">
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-              <label for="date">Date</label>
-              <input type="date" id="date" name="date" required>
-            </div>
-            <div class="form-group">
-              <label for="time">Time</label>
-              <select id="time" name="time" required>
-                <option value="">Select Time</option>
-                <option value="18:00">6:00 PM</option>
-                <option value="18:30">6:30 PM</option>
-                <option value="19:00">7:00 PM</option>
-                <option value="19:30">7:30 PM</option>
-                <option value="20:00">8:00 PM</option>
-                <option value="20:30">8:30 PM</option>
-                <option value="21:00">9:00 PM</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="guests">Number of Guests</label>
-              <select id="guests" name="guests" required>
-                <option value="">Select</option>
-                <option value="1">1 Person</option>
-                <option value="2">2 People</option>
-                <option value="3">3 People</option>
-                <option value="4">4 People</option>
-                <option value="5">5 People</option>
-                <option value="6">6 People</option>
-                <option value="7+">7+ People</option>
-              </select>
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-inner">
+          <div class="about-content reveal-element">
+            <span class="section-tag">Our Story</span>
+            <h2 class="section-title">A Culinary Journey of Passion</h2>
+            <p class="section-text">Founded by acclaimed Chef Michel Laurent in 2015, Lumière represents the culmination of a lifelong dedication to culinary excellence. Our philosophy centers on transforming the finest seasonal ingredients into unforgettable dining experiences.</p>
+            <p class="section-text">Each dish tells a story—of tradition reimagined, of boundaries pushed, of flavors discovered. We invite you to join us on this gastronomic journey where every meal is a celebration of artistry and taste.</p>
+            <div class="about-signature">
+              <img src="/placeholder.svg?height=80&width=200" alt="Chef's Signature">
+              <span>Michel Laurent, Executive Chef</span>
             </div>
           </div>
-          <div class="form-group">
-            <label for="special">Special Requests</label>
-            <textarea id="special" name="special" rows="3"></textarea>
+          <div class="about-image reveal-element">
+            <div class="image-frame">
+              <img src="/placeholder.svg?height=800&width=600" alt="Chef plating a dish">
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary">Confirm Reservation</button>
-        </form>
-        <div class="reservation-info">
-          <p>For parties larger than 6 or private events, please contact us directly:</p>
-          <a href="tel:+2634123456" class="phone">+263 4 123 456</a>
-          <a href="mailto:reservations@saltzim.com" class="email">reservations@saltzim.com</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-grid">
-        <div class="contact-info">
-          <span class="subtitle">Find Us</span>
-          <h2>Location & Hours</h2>
-          <div class="info-item">
-            <h3>Address</h3>
-            <p>123 Samora Machel Avenue<br>Harare, Zimbabwe</p>
+    <section class="specialties">
+      <div class="container">
+        <div class="specialties-inner">
+          <div class="specialties-header reveal-element">
+            <span class="section-tag">Signature Dishes</span>
+            <h2 class="section-title">Culinary Masterpieces</h2>
           </div>
-          <div class="info-item">
-            <h3>Hours</h3>
-            <p>Tuesday - Thursday: 6:00 PM - 10:00 PM<br>
-               Friday - Saturday: 6:00 PM - 11:00 PM<br>
-               Sunday: 12:00 PM - 3:00 PM (Lunch)<br>
-               Monday: Closed</p>
+          <div class="specialties-grid">
+            <div class="specialty-item reveal-element">
+              <div class="specialty-image">
+                <img src="/placeholder.svg?height=600&width=600" alt="Signature dish">
+              </div>
+              <div class="specialty-content">
+                <h3>Lobster Ravioli</h3>
+                <p>Hand-crafted pasta filled with fresh lobster, finished with a saffron cream sauce and caviar</p>
+              </div>
+            </div>
+            <div class="specialty-item reveal-element">
+              <div class="specialty-image">
+                <img src="/placeholder.svg?height=600&width=600" alt="Signature dish">
+              </div>
+              <div class="specialty-content">
+                <h3>Wagyu Tenderloin</h3>
+                <p>A5 Japanese Wagyu, truffle potato purée, heirloom vegetables, and red wine reduction</p>
+              </div>
+            </div>
+            <div class="specialty-item reveal-element">
+              <div class="specialty-image">
+                <img src="/placeholder.svg?height=600&width=600" alt="Signature dish">
+              </div>
+              <div class="specialty-content">
+                <h3>Chocolate Symphony</h3>
+                <p>Five textures of single-origin chocolate with gold leaf and raspberry coulis</p>
+              </div>
+            </div>
           </div>
-          <div class="info-item">
-            <h3>Contact</h3>
-            <p>Phone: +263 4 123 456<br>
-               Email: info@saltzim.com</p>
-          </div>
-          <div class="social-links">
-            <a href="#" class="social-link">Instagram</a>
-            <a href="#" class="social-link">Facebook</a>
-            <a href="#" class="social-link">TripAdvisor</a>
-          </div>
-        </div>
-        <div class="contact-map">
-          <img src="/placeholder.svg?height=600&width=800" alt="Map Location">
-          <p class="map-caption">Interactive map will be displayed here</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="menu" class="menu">
+      <div class="container">
+        <div class="menu-inner">
+          <div class="menu-header reveal-element">
+            <span class="section-tag">Our Offerings</span>
+            <h2 class="section-title">Seasonal Menu</h2>
+            <p class="section-text">Our menu evolves with the seasons, showcasing the finest ingredients at their peak. Each dish is crafted with precision and passion, creating a harmonious balance of flavors and textures.</p>
+          </div>
+          <div class="menu-tabs reveal-element">
+            <button class="menu-tab active" data-menu="dinner">Dinner</button>
+            <button class="menu-tab" data-menu="tasting">Tasting Experience</button>
+            <button class="menu-tab" data-menu="wine">Wine Selection</button>
+          </div>
+          <div class="menu-content reveal-element">
+            <div class="menu-panel active" id="dinner">
+              <div class="menu-category">
+                <h3>Appetizers</h3>
+                <div class="menu-items">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Foie Gras Terrine</h4>
+                      <span class="price">$32</span>
+                    </div>
+                    <p>Port wine reduction, brioche, fig compote</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Scallop Carpaccio</h4>
+                      <span class="price">$28</span>
+                    </div>
+                    <p>Yuzu, black truffle, micro herbs</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Heirloom Tomato Tart</h4>
+                      <span class="price">$24</span>
+                    </div>
+                    <p>Goat cheese mousse, basil oil, aged balsamic</p>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-category">
+                <h3>Main Courses</h3>
+                <div class="menu-items">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Dover Sole</h4>
+                      <span class="price">$58</span>
+                    </div>
+                    <p>Brown butter, capers, lemon, parsley potatoes</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Rack of Lamb</h4>
+                      <span class="price">$62</span>
+                    </div>
+                    <p>Herb crust, eggplant caviar, rosemary jus</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Wild Mushroom Risotto</h4>
+                      <span class="price">$42</span>
+                    </div>
+                    <p>Seasonal mushrooms, aged parmesan, truffle oil</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-panel" id="tasting">
+              <div class="tasting-menu">
+                <p class="tasting-intro">Our seven-course tasting menu is a curated journey through the season's finest offerings, showcasing our chef's creativity and passion.</p>
+                <div class="tasting-price">$145 per person</div>
+                <div class="tasting-wine">Wine pairing available: $85 per person</div>
+                <div class="menu-item">
+                  <h4>Amuse-Bouche</h4>
+                  <p>Chef's daily creation</p>
+                </div>
+                <div class="menu-item">
+                  <h4>First Course</h4>
+                  <p>Oyster with champagne granita</p>
+                </div>
+                <div class="menu-item">
+                  <h4>Second Course</h4>
+                  <p>Seared foie gras, cherry, pistachio</p>
+                </div>
+                <div class="menu-item">
+                  <h4>Third Course</h4>
+                  <p>Butter-poached lobster, saffron risotto</p>
+                </div>
+                <div class="menu-item">
+                  <h4>Fourth Course</h4>
+                  <p>Sorbet intermezzo</p>
+                </div>
+                <div class="menu-item">
+                  <h4>Fifth Course</h4>
+                  <p>Aged beef tenderloin, truffle jus</p>
+                </div>
+                <div class="menu-item">
+                  <h4>Sixth Course</h4>
+                  <p>Artisanal cheese selection</p>
+                </div>
+                <div class="menu-item">
+                  <h4>Seventh Course</h4>
+                  <p>Chocolate soufflé, grand marnier crème anglaise</p>
+                </div>
+              </div>
+            </div>
+            <div class="menu-panel" id="wine">
+              <div class="wine-intro">
+                <p>Our sommelier has curated an exceptional collection of wines from around the world to complement your dining experience.</p>
+              </div>
+              <div class="menu-category">
+                <h3>Champagne & Sparkling</h3>
+                <div class="menu-items">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Dom Pérignon, 2012</h4>
+                      <span class="price">$320</span>
+                    </div>
+                    <p>Épernay, France</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Ruinart Blanc de Blancs</h4>
+                      <span class="price">$180</span>
+                    </div>
+                    <p>Reims, France</p>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-category">
+                <h3>White Wine</h3>
+                <div class="menu-items">
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Puligny-Montrachet, Domaine Leflaive, 2018</h4>
+                      <span class="price">$240</span>
+                    </div>
+                    <p>Burgundy, France</p>
+                  </div>
+                  <div class="menu-item">
+                    <div class="menu-item-header">
+                      <h4>Cloudy Bay Sauvignon Blanc, 2022</h4>
+                      <span class="price">$85</span>
+                    </div>
+                    <p>Marlborough, New Zealand</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-cta reveal-element">
+            <a href="#" class="btn-outline">Download Full Menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="experience">
+      <div class="parallax-bg" style="background-image: url('/placeholder.svg?height=1080&width=1920');"></div>
+      <div class="container">
+        <div class="experience-inner">
+          <div class="experience-content reveal-element">
+            <span class="section-tag">The Atmosphere</span>
+            <h2 class="section-title">An Immersive Dining Experience</h2>
+            <p class="section-text">Step into a world where every detail has been meticulously considered. Our dining room combines contemporary elegance with timeless sophistication, creating the perfect backdrop for an unforgettable meal.</p>
+            <p class="section-text">From the moment you arrive, our attentive staff will guide you through a sensory journey designed to delight and surprise. Each element—from the custom-designed furnishings to the carefully curated music—contributes to an atmosphere of refined luxury.</p>
+            <a href="#reserve" class="btn-primary">Reserve Your Table</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="gallery-header reveal-element">
+          <span class="section-tag">Visual Journey</span>
+          <h2 class="section-title">Moments of Excellence</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item reveal-element">
+            <img src="/placeholder.svg?height=600&width=600" alt="Restaurant interior">
+            <div class="gallery-overlay">
+              <span>Elegant Interior</span>
+            </div>
+          </div>
+          <div class="gallery-item reveal-element">
+            <img src="/placeholder.svg?height=600&width=600" alt="Plated dish">
+            <div class="gallery-overlay">
+              <span>Culinary Artistry</span>
+            </div>
+          </div>
+          <div class="gallery-item reveal-element">
+            <img src="/placeholder.svg?height=600&width=600" alt="Wine service">
+            <div class="gallery-overlay">
+              <span>Wine Service</span>
+            </div>
+          </div>
+          <div class="gallery-item reveal-element">
+            <img src="/placeholder.svg?height=600&width=600" alt="Chef at work">
+            <div class="gallery-overlay">
+              <span>Craftsmanship</span>
+            </div>
+          </div>
+          <div class="gallery-item reveal-element">
+            <img src="/placeholder.svg?height=600&width=600" alt="Dessert presentation">
+            <div class="gallery-overlay">
+              <span>Sweet Finales</span>
+            </div>
+          </div>
+          <div class="gallery-item reveal-element">
+            <img src="/placeholder.svg?height=600&width=600" alt="Private dining">
+            <div class="gallery-overlay">
+              <span>Private Dining</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="testimonials-inner">
+          <div class="testimonials-header reveal-element">
+            <span class="section-tag">Guest Experiences</span>
+            <h2 class="section-title">What Our Guests Say</h2>
+          </div>
+          <div class="testimonials-slider swiper reveal-element">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial">
+                  <div class="testimonial-content">
+                    <p>"An extraordinary culinary journey that transcends mere dining. Each course was a revelation of flavor and artistry. Truly one of the finest restaurants I've experienced globally."</p>
+                  </div>
+                  <div class="testimonial-author">
+                    <div class="author-name">James Worthington</div>
+                    <div class="author-title">Food Critic, The Epicurean</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial">
+                  <div class="testimonial-content">
+                    <p>"The tasting menu was a masterclass in balance and creativity. Chef Laurent's ability to transform familiar ingredients into something magical is unparalleled. An evening to remember."</p>
+                  </div>
+                  <div class="testimonial-author">
+                    <div class="author-name">Sophia Chen</div>
+                    <div class="author-title">Culinary Enthusiast</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial">
+                  <div class="testimonial-content">
+                    <p>"Beyond the exceptional food, the service at Lumière elevates the entire experience. Attentive without being intrusive, knowledgeable without pretension. A perfect evening from start to finish."</p>
+                  </div>
+                  <div class="testimonial-author">
+                    <div class="author-name">Michael Donovan</div>
+                    <div class="author-title">Luxury Travel Writer</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonials-pagination swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reserve" class="reservation">
+      <div class="container">
+        <div class="reservation-inner">
+          <div class="reservation-image reveal-element">
+            <img src="/placeholder.svg?height=800&width=600" alt="Restaurant table setting">
+          </div>
+          <div class="reservation-content reveal-element">
+            <span class="section-tag">Book Your Experience</span>
+            <h2 class="section-title">Reservations</h2>
+            <p class="section-text">We welcome you to experience the artistry of Lumière. Reservations are recommended and can be made up to 60 days in advance.</p>
+            <form class="reservation-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                  <label for="guests">Number of Guests</label>
+                  <select id="guests" name="guests" required>
+                    <option value="">Select</option>
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People</option>
+                    <option value="3">3 People</option>
+                    <option value="4">4 People</option>
+                    <option value="5">5 People</option>
+                    <option value="6">6 People</option>
+                    <option value="7+">7+ People</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="date">Date</label>
+                  <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                  <label for="time">Time</label>
+                  <select id="time" name="time" required>
+                    <option value="">Select</option>
+                    <option value="17:30">5:30 PM</option>
+                    <option value="18:00">6:00 PM</option>
+                    <option value="18:30">6:30 PM</option>
+                    <option value="19:00">7:00 PM</option>
+                    <option value="19:30">7:30 PM</option>
+                    <option value="20:00">8:00 PM</option>
+                    <option value="20:30">8:30 PM</option>
+                    <option value="21:00">9:00 PM</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="special">Special Requests</label>
+                <textarea id="special" name="special" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Confirm Reservation</button>
+            </form>
+            <div class="reservation-info">
+              <p>For parties larger than 6 or private events, please contact us directly:</p>
+              <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+              <a href="mailto:reservations@lumiererestaurant.com" class="contact-link">reservations@lumiererestaurant.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-inner">
+          <div class="contact-content reveal-element">
+            <span class="section-tag">Find Us</span>
+            <h2 class="section-title">Location & Hours</h2>
+            <div class="contact-details">
+              <div class="contact-item">
+                <h3>Address</h3>
+                <p>123 Elegance Avenue<br>New York, NY 10001</p>
+              </div>
+              <div class="contact-item">
+                <h3>Hours</h3>
+                <p>Tuesday - Thursday: 5:30 PM - 10:00 PM<br>
+                   Friday - Saturday: 5:30 PM - 11:00 PM<br>
+                   Sunday - Monday: Closed</p>
+              </div>
+              <div class="contact-item">
+                <h3>Contact</h3>
+                <p>Phone: +1 (555) 123-4567<br>
+                   Email: info@lumiererestaurant.com</p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" class="social-link">Instagram</a>
+              <a href="#" class="social-link">Facebook</a>
+              <a href="#" class="social-link">Twitter</a>
+            </div>
+          </div>
+          <div class="contact-map reveal-element">
+            <div class="map-container">
+              <img src="/placeholder.svg?height=600&width=800" alt="Map location">
+              <div class="map-overlay">
+                <span>Interactive Map</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <h2>SALT</h2>
-          <p>Fine Dining Experience</p>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <h2>LUMIÈRE</h2>
+            <p>Fine Dining Experience</p>
+          </div>
+          <div class="footer-nav">
+            <div class="footer-nav-column">
+              <h3>Explore</h3>
+              <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-column">
+              <h3>Visit</h3>
+              <ul>
+                <li><a href="#contact">Location</a></li>
+                <li><a href="#reserve">Reservations</a></li>
+                <li><a href="#">Private Events</a></li>
+                <li><a href="#">Gift Cards</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-column">
+              <h3>Connect</h3>
+              <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="mailto:info@lumiererestaurant.com">Email Us</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="footer-links">
-          <div class="footer-column">
-            <h3>Explore</h3>
-            <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#menu">Menu</a></li>
-              <li><a href="#experience">Experience</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-            </ul>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Lumière Restaurant. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
           </div>
-          <div class="footer-column">
-            <h3>Visit</h3>
-            <ul>
-              <li><a href="#contact">Location</a></li>
-              <li><a href="#reserve">Reservations</a></li>
-              <li><a href="#">Private Events</a></li>
-              <li><a href="#">Gift Cards</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h3>Connect</h3>
-            <ul>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">TripAdvisor</a></li>
-              <li><a href="mailto:info@saltzim.com">Email Us</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 SALT Restaurant. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

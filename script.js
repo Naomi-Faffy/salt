@@ -1,4 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Page loader
+  const loader = document.querySelector(".loader")
+  const loaderProgress = document.querySelector(".loader-progress span")
+  let progress = 0
+
+  const interval = setInterval(() => {
+    progress += Math.floor(Math.random() * 10) + 5
+    if (progress > 100) progress = 100
+    loaderProgress.style.width = `${progress}%`
+
+    if (progress === 100) {
+      clearInterval(interval)
+      setTimeout(() => {
+        loader.classList.add("hidden")
+        document.body.classList.add("loaded")
+        initAnimations()
+      }, 500)
+    }
+  }, 200)
+
+  // Custom cursor
+  const cursor = document.querySelector(".cursor")
+  const cursorFollower = document.querySelector(".cursor-follower")
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px"
+    cursor.style.top = e.clientY + "px"
+
+    setTimeout(() => {
+      cursorFollower.style.left = e.clientX + "px"
+      cursorFollower.style.top = e.clientY + "px"
+    }, 100)
+  })
+
+  document.addEventListener("mousedown", () => {
+    cursor.style.transform = "translate(-50%, -50%) scale(0.8)"
+    cursorFollower.style.transform = "translate(-50%, -50%) scale(0.8)"
+  })
+
+  document.addEventListener("mouseup", () => {
+    cursor.style.transform = "translate(-50%, -50%) scale(1)"
+    cursorFollower.style.transform = "translate(-50%, -50%) scale(1)"
+  })
+
+  // Add hover effect for links and buttons
+  const hoverElements = document.querySelectorAll("a, button, .menu-toggle, .gallery-item")
+
+  hoverElements.forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+      cursorFollower.style.transform = "translate(-50%, -50%) scale(1.5)"
+      cursorFollower.style.backgroundColor = "rgba(201, 168, 122, 0.2)"
+      cursor.style.opacity = "0"
+    })
+
+    element.addEventListener("mouseleave", () => {
+      cursorFollower.style.transform = "translate(-50%, -50%) scale(1)"
+      cursorFollower.style.backgroundColor = "transparent"
+      cursor.style.opacity = "1"
+    })
+  })
+
   // Header scroll effect
   const header = document.querySelector(".header")
 
@@ -10,16 +71,78 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // Mobile Menu Toggle
-  const mobileMenuBtn = document.querySelector(".mobile-menu-btn")
-  const navLinks = document.querySelector(".nav-links")
+  // Mobile menu toggle
+  const menuToggle = document.querySelector(".menu-toggle")
+  const mobileMenu = document.querySelector(".mobile-menu")
 
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener("click", function () {
-      this.classList.toggle("active")
-      navLinks.classList.toggle("active")
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active")
+    mobileMenu.classList.toggle("active")
+    document.body.classList.toggle("no-scroll")
+  })
+
+  // Close mobile menu when clicking a link
+  const mobileLinks = document.querySelectorAll(".mobile-nav-link")
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menuToggle.classList.remove("active")
+      mobileMenu.classList.remove("active")
+      document.body.classList.remove("no-scroll")
     })
-  }
+  })
+
+  // Hero slider
+  const Swiper = window.Swiper // Assuming Swiper is available globally
+  const heroSwiper = new Swiper(".hero-slider", {
+    speed: 1000,
+    effect: "fade",
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".hero-pagination",
+      clickable: true,
+    },
+  })
+
+  // Testimonials slider
+  const testimonialSwiper = new Swiper(".testimonials-slider", {
+    speed: 800,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".testimonials-pagination",
+      clickable: true,
+    },
+  })
+
+  // Menu tabs
+  const menuTabs = document.querySelectorAll(".menu-tab")
+  const menuPanels = document.querySelectorAll(".menu-panel")
+
+  menuTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove active class from all tabs
+      menuTabs.forEach((t) => t.classList.remove("active"))
+
+      // Add active class to clicked tab
+      tab.classList.add("active")
+
+      // Hide all panels
+      menuPanels.forEach((panel) => panel.classList.remove("active"))
+
+      // Show the corresponding panel
+      const panelId = tab.getAttribute("data-menu")
+      document.getElementById(panelId).classList.add("active")
+    })
+  })
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -31,14 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const targetElement = document.querySelector(targetId)
       if (targetElement) {
-        // Close mobile menu if open
-        if (navLinks.classList.contains("active")) {
-          navLinks.classList.remove("active")
-          mobileMenuBtn.classList.remove("active")
-        }
-
-        // Scroll to target
-        const headerHeight = document.querySelector("header").offsetHeight
+        const headerHeight = document.querySelector(".header").offsetHeight
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight
 
         window.scrollTo({
@@ -49,84 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Color Category Filter
-  const colorCategories = document.querySelectorAll(".color-category")
-
-  if (colorCategories.length > 0) {
-    colorCategories.forEach((category) => {
-      category.addEventListener("click", function () {
-        // Remove active class from all categories
-        colorCategories.forEach((cat) => cat.classList.remove("active"))
-
-        // Add active class to clicked category
-        this.classList.add("active")
-
-        // Filter logic would go here
-        const selectedCategory = this.dataset.category
-        console.log("Selected category:", selectedCategory)
-
-        // For a real implementation, you would filter the color swatches here
-      })
-    })
-  }
-
-  // Testimonial Slider
-  const testimonialDots = document.querySelectorAll(".testimonial-dots .dot")
-  const testimonials = document.querySelectorAll(".testimonial")
-
-  if (testimonialDots.length > 0 && testimonials.length > 0) {
-    // Initially hide all testimonials except the first one
-    testimonials.forEach((testimonial, index) => {
-      if (index !== 0) {
-        testimonial.style.display = "none"
-      }
-    })
-
-    testimonialDots.forEach((dot, index) => {
-      dot.addEventListener("click", function () {
-        // Remove active class from all dots
-        testimonialDots.forEach((d) => d.classList.remove("active"))
-
-        // Add active class to clicked dot
-        this.classList.add("active")
-
-        // Hide all testimonials
-        testimonials.forEach((testimonial) => {
-          testimonial.style.display = "none"
-        })
-
-        // Show the selected testimonial
-        testimonials[index].style.display = "block"
-      })
-    })
-  }
-
-  // Contact Form Submission
-  const contactForm = document.getElementById("contactForm")
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault()
-
-      // Get form data
-      const formData = new FormData(this)
-      const formDataObj = {}
-
-      formData.forEach((value, key) => {
-        formDataObj[key] = value
-      })
-
-      console.log("Form submitted:", formDataObj)
-
-      // For a real implementation, you would send this data to a server
-      // For now, just show a success message
-      alert("Thank you for your message! We will get back to you soon.")
-      this.reset()
-    })
-  }
-
-  // Reservation Form Validation
-  const reservationForm = document.getElementById("reservationForm")
+  // Reservation form validation
+  const reservationForm = document.querySelector(".reservation-form")
 
   if (reservationForm) {
     reservationForm.addEventListener("submit", function (e) {
@@ -168,33 +208,35 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Add active class to nav links based on scroll position
-  function setActiveNavLink() {
-    const sections = document.querySelectorAll("section")
-    const navLinks = document.querySelectorAll(".nav-links a")
+  // Initialize animations
+  function initAnimations() {
+    // GSAP ScrollTrigger setup
+    const gsap = window.gsap // Assuming gsap is available globally
+    const ScrollTrigger = window.ScrollTrigger // Assuming ScrollTrigger is available globally
+    gsap.registerPlugin(ScrollTrigger)
 
-    let currentSection = ""
+    // Reveal animations for elements
+    const revealElements = document.querySelectorAll(".reveal-element")
 
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop
-      const sectionHeight = section.clientHeight
-      const headerHeight = document.querySelector("header").offsetHeight
-
-      if (window.pageYOffset >= sectionTop - headerHeight - 200) {
-        currentSection = section.getAttribute("id")
-      }
+    revealElements.forEach((element, index) => {
+      ScrollTrigger.create({
+        trigger: element,
+        start: "top 85%",
+        onEnter: () => {
+          element.classList.add("revealed")
+        },
+      })
     })
 
-    navLinks.forEach((link) => {
-      link.classList.remove("active")
-      if (link.getAttribute("href") === `#${currentSection}`) {
-        link.classList.add("active")
-      }
+    // Parallax effect for background
+    gsap.to(".parallax-bg", {
+      scrollTrigger: {
+        trigger: ".experience",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+      y: -100,
     })
   }
-
-  window.addEventListener("scroll", setActiveNavLink)
-
-  // Initialize active nav link on page load
-  setActiveNavLink()
 })
